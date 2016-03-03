@@ -12,6 +12,7 @@
 		07C3736F1C83CEFB00EED931 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07C3736E1C83CEFB00EED931 /* Assets.xcassets */; };
 		07C373721C83CEFB00EED931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C373701C83CEFB00EED931 /* LaunchScreen.storyboard */; };
 		07C3737A1C83D49200EED931 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C373791C83D49200EED931 /* LoginViewController.swift */; };
+		07FDD0501C87D3D700A4EAB8 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FDD04F1C87D3D700A4EAB8 /* PhotosViewController.swift */; };
 		B13CC5B8DF74413A7B623FE8 /* Pods_ParseGram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B710AD12FDCFBDC112C26C0 /* Pods_ParseGram.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		07C373711C83CEFB00EED931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07C373731C83CEFB00EED931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07C373791C83D49200EED931 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07FDD04F1C87D3D700A4EAB8 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		091CE4DFE1839819D6B15343 /* Pods-ParseGram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseGram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParseGram/Pods-ParseGram.debug.xcconfig"; sourceTree = "<group>"; };
 		7B710AD12FDCFBDC112C26C0 /* Pods_ParseGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A119D3D4C97902DD960740 /* Pods-ParseGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseGram.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParseGram/Pods-ParseGram.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				07C373791C83D49200EED931 /* LoginViewController.swift */,
+				07FDD04F1C87D3D700A4EAB8 /* PhotosViewController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FDD0501C87D3D700A4EAB8 /* PhotosViewController.swift in Sources */,
 				07C3737A1C83D49200EED931 /* LoginViewController.swift in Sources */,
 				07C373681C83CEFB00EED931 /* AppDelegate.swift in Sources */,
 			);

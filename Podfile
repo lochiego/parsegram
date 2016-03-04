@@ -6,6 +6,7 @@ use_frameworks!
 target 'ParseGram' do
 
 pod 'Parse'
+pod 'ParseUI'
 
 end
 

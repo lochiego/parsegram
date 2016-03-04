@@ -9,8 +9,8 @@
 import UIKit
 
 protocol PhotoSelectDelegate: class {
-  func finishedSelect()
-  func cancelSelect()
+  func photoSelectControllerFinishedSubmit()
+  func photoSelectControllerCanceledSelect()
 }
 
 class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -42,13 +42,13 @@ class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelega
   }
   
   @IBAction func onCancel(sender: AnyObject) {
-    delegate?.cancelSelect()
+    delegate?.photoSelectControllerCanceledSelect()
   }
   
   @IBAction func onSubmit(sender: AnyObject) {
     Photos.postPhoto(imageView.image, caption: captionText.text) { (success, error) -> Void in
       if success {
-        self.delegate?.finishedSelect()
+        self.delegate?.photoSelectControllerFinishedSubmit()
       }
       else {
         let alert = UIAlertController(title: "Error", message: "Problem during submission, try again later\n\(error?.code)", preferredStyle: .Alert)

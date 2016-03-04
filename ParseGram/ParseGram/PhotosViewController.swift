@@ -34,7 +34,6 @@ class PhotosViewController: UIViewController, UITableViewDelegate, UITableViewDa
   func fetchPhotos() {
     let query = PFQuery(className: "Post")
     query.orderByDescending("createdAt")
-    //      query.includeKey("author")
     query.limit = 20
     
     // fetch data asynchronously

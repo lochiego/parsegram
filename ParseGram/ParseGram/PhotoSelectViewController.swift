@@ -17,6 +17,9 @@ class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelega
   
   weak var delegate: PhotoSelectDelegate?
   
+  @IBOutlet weak var acceptButton: UIBarButtonItem!
+  @IBOutlet weak var cancelButton: UIBarButtonItem!
+  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var captionText: UITextField!
   @IBOutlet weak var distanceConstraint: NSLayoutConstraint!
@@ -32,6 +35,11 @@ class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelega
         // Dispose of any resources that can be recreated.
     }
   
+  func enableUI(enable: Bool) {
+    cancelButton.enabled = enable
+    acceptButton.enabled = enable
+  }
+  
 
   @IBAction func onTakePicture(sender: AnyObject) {
     let picker = UIImagePickerController()
@@ -42,10 +50,12 @@ class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelega
   }
   
   @IBAction func onCancel(sender: AnyObject) {
+    enableUI(false)
     delegate?.photoSelectControllerCanceledSelect()
   }
   
   @IBAction func onSubmit(sender: AnyObject) {
+    enableUI(false)
     Photos.postPhoto(imageView.image, caption: captionText.text) { (success, error) -> Void in
       if success {
         self.delegate?.photoSelectControllerFinishedSubmit()
@@ -56,6 +66,7 @@ class PhotoSelectViewController: UIViewController, UIImagePickerControllerDelega
         self.presentViewController(alert, animated: true, completion: nil)
       }
     }
+    self.enableUI(true)
   }
   
   // MARK: Image Picker Delegate

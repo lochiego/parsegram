@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -93,17 +94,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="4II-Qr-Nib">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="4II-Qr-Nib">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" id="GJh-J4-3hL">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="320" id="GJh-J4-3hL" customClass="PhotoCell" customModule="ParseGram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="320" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GJh-J4-3hL" id="FbZ-jN-Ruu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N2d-qu-DwA" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="N2d-qu-DwA" secondAttribute="height" multiplier="1:1" id="uIE-Hj-Zo6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE2-IK-lmS">
+                                                    <rect key="frame" x="0.0" y="299.5" width="320" height="20"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="N2d-qu-DwA" secondAttribute="trailing" id="7FI-9t-Pqd"/>
+                                                <constraint firstAttribute="bottom" secondItem="N2d-qu-DwA" secondAttribute="bottom" id="BWy-H2-r6g"/>
+                                                <constraint firstAttribute="bottom" secondItem="IE2-IK-lmS" secondAttribute="bottom" id="N9c-fT-gEp"/>
+                                                <constraint firstItem="N2d-qu-DwA" firstAttribute="top" secondItem="FbZ-jN-Ruu" secondAttribute="top" id="QFD-1K-r3I"/>
+                                                <constraint firstItem="IE2-IK-lmS" firstAttribute="leading" secondItem="FbZ-jN-Ruu" secondAttribute="leading" id="aVv-il-aUZ"/>
+                                                <constraint firstItem="N2d-qu-DwA" firstAttribute="leading" secondItem="FbZ-jN-Ruu" secondAttribute="leading" id="bpV-AG-wzn"/>
+                                                <constraint firstAttribute="trailing" secondItem="IE2-IK-lmS" secondAttribute="trailing" id="fkd-O7-RWy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="IE2-IK-lmS" id="iGB-8z-NWc"/>
+                                            <outlet property="photoView" destination="N2d-qu-DwA" id="f0e-e1-H79"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -128,6 +157,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="4II-Qr-Nib" id="v6g-Kz-do2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDz-ag-mzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,6 +235,8 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="acceptButton" destination="OfW-Uc-zwZ" id="GOa-oQ-lAQ"/>
+                        <outlet property="cancelButton" destination="Tfs-Ya-cNg" id="WT6-Kd-5RK"/>
                         <outlet property="captionText" destination="nne-PW-3Dx" id="Fba-B2-td2"/>
                         <outlet property="distanceConstraint" destination="4Gs-3e-h0k" id="xIH-rF-Ukz"/>
                         <outlet property="imageView" destination="bvH-Og-WXl" id="gCb-2X-6cE"/>

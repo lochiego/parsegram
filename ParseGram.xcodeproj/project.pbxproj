@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		072D21A21C895C3300F4981A /* PhotoSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D21A11C895C3300F4981A /* PhotoSelectViewController.swift */; };
+		072D21A41C896D8F00F4981A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072D21A31C896D8F00F4981A /* PhotoCell.swift */; };
 		0785FBD91C8953D900B11E47 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785FBD81C8953D900B11E47 /* Photos.swift */; };
 		07C373681C83CEFB00EED931 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C373671C83CEFB00EED931 /* AppDelegate.swift */; };
 		07C3736D1C83CEFB00EED931 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07C3736B1C83CEFB00EED931 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		072D21A11C895C3300F4981A /* PhotoSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSelectViewController.swift; sourceTree = "<group>"; };
+		072D21A31C896D8F00F4981A /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		0785FBD81C8953D900B11E47 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		07C373641C83CEFB00EED931 /* ParseGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07C373671C83CEFB00EED931 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				07C373791C83D49200EED931 /* LoginViewController.swift */,
 				07FDD04F1C87D3D700A4EAB8 /* PhotosViewController.swift */,
 				072D21A11C895C3300F4981A /* PhotoSelectViewController.swift */,
+				072D21A31C896D8F00F4981A /* PhotoCell.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				07FDD0501C87D3D700A4EAB8 /* PhotosViewController.swift in Sources */,
 				072D21A21C895C3300F4981A /* PhotoSelectViewController.swift in Sources */,
 				07C3737A1C83D49200EED931 /* LoginViewController.swift in Sources */,
+				072D21A41C896D8F00F4981A /* PhotoCell.swift in Sources */,
 				07C373681C83CEFB00EED931 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

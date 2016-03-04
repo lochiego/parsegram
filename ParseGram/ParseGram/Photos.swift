@@ -30,7 +30,7 @@ class Photos: NSObject {
   
   private class func getPFFileFromImage(image: UIImage?) -> PFFile? {
     if let image = image {
-      if let imageData = UIImagePNGRepresentation(resize(image, newSize: CGSize(width: 640, height: 480))) {
+      if let imageData = UIImagePNGRepresentation(resize(image, newSize: CGSize(width: 640, height: 640))) {
         return PFFile(name: "image.png", data: imageData)
       }
     }

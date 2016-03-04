@@ -20,18 +20,14 @@ class LoginViewController: UIViewController {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
-    
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    NSNotificationCenter.defaultCenter().removeObserver(self)
   }
   
   override func viewDidDisappear(animated: Bool) {
-    super.viewDidDisappear(animated)
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "logout", name: "logoutNotification", object: nil)
-    
+    super.viewDidDisappear(animated)    
   }
   
   override func didReceiveMemoryWarning() {
@@ -41,14 +37,15 @@ class LoginViewController: UIViewController {
   
   @IBAction func onSignIn(sender: AnyObject) {
   enableUI(false)
+//    signInButton.setTitle("Signing In...", forState: .Normal)
     PFUser.logInWithUsernameInBackground(usernameField.text!, password: passwordField.text!) { (user, error) -> Void in
       if user != nil {
-        print("you're logged in")
-        self.performSegueWithIdentifier("loginSegue", sender: self)
+        self.login()
         self.passwordField.text = nil
       } else {
         
       }
+//      self.signInButton.setTitle("Sign In", forState: .Normal)
       self.enableUI(true)
     }
     
@@ -63,16 +60,22 @@ class LoginViewController: UIViewController {
     enableUI(false)
     newUser.signUpInBackgroundWithBlock { (success, error) -> Void in
       if success {
-        print("Yay, created a user!")
-        self.performSegueWithIdentifier("loginSegue", sender: self)
+        self.login()
       } else {
         print(error?.localizedDescription)
         if error?.code == 202 {
+          let alert = UIAlertController(title: "Username Taken", message: nil, preferredStyle: .Alert)
+          alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
           print("Username is taken")
+          self.presentViewController(alert, animated: true, completion: nil)
         }
       }
       self.enableUI(true)
     }
+  }
+  
+  func login() {
+    self.performSegueWithIdentifier("loginSegue", sender: self)
   }
   
   func logout() {
@@ -81,6 +84,7 @@ class LoginViewController: UIViewController {
   
   func enableUI(enable: Bool) {
     signInButton.enabled = enable
+    signUpButton.enabled = enable
   }
   
   /*

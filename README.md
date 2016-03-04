@@ -1,6 +1,6 @@
-# Project 6 - *Name of App Here*
+# Project 6 - *ParseGram*
 
-**Name of your app** is a photo sharing app using Parse as its backend.
+**ParseGram** is a photo sharing app using Parse as its backend.
 
 Time spent: **4** hours spent in total
 
